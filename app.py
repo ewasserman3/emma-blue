@@ -40,5 +40,5 @@ def landing_page():
 
 
 if __name__ == "__main__":
-    application.run()
-#application.run(host="0.0.0.0", debug=True, port=8080)
+    port = int(os.environ.get("PORT", 5000))
+    application.run(host='0.0.0.0', port=port, debug=True, use_reloader=True))
