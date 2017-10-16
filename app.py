@@ -1,22 +1,43 @@
 from flask import Flask, render_template
+import datetime
  
  
 app = Flask(__name__)
 
 
+tabs = [
+    {
+        'name': 'Work',
+        'index': 'work',
+        'template': 'work.html'
+    },
+    {
+        'name': 'About',
+        'index': 'about',
+        'template': 'about.html'
+    },
+    {
+        'name': 'Support',
+        'index': 'support',
+        'template': 'support.html'
+    },
+    {
+        'name': 'Contact',
+        'index': 'contact',
+        'template': 'contact.html'
+    }
+]
+
+
+@app.route("/main")
+def main_site():
+    return render_template('index.html', tabs=tabs)
+
+
 @app.route("/")
-def index():
-    return "Hello World!"
+def landing_page():
+    return render_template('landing-page.html', tabs=tabs)
 
-
-@app.route('/hello/')
-@app.route('/hello/<name>')
-def hello(name=None):
-    return render_template('hello.html', name=name)
- 
-@app.route("/test")
-def template_test():
-    return render_template('template.html', my_string="Wheeeee!", my_list=[0,1,2,3,4,5])
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True, port=80)
+    app.run(host="0.0.0.0", debug=True, port=80)
