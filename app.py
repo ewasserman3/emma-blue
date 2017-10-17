@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import os
  
  
-application = Flask(__name__)
+app = Flask(__name__)
 
 
 tabs = [
@@ -29,16 +29,16 @@ tabs = [
 ]
 
 
-@application.route("/main")
+@app.route("/main")
 def main_site():
     return render_template('index.html', tabs=tabs)
 
 
-@application.route("/")
+@app.route("/")
 def landing_page():
     return render_template('landing-page.html', tabs=tabs)
 
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
-    application.run(host="0.0.0.0", port=8000, debug=True, use_reloader=True)
+    app.run(debug=True)
