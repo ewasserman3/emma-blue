@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/emma-blue.iml" filepath="$PROJECT_DIR$/.idea/emma-blue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../startbootstrap-creative/.idea/startbootstrap-creative.iml" filepath="$PROJECT_DIR$/../startbootstrap-creative/.idea/startbootstrap-creative.iml" />
     </modules>
   </component>
 </project>

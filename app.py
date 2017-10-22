@@ -39,6 +39,10 @@ def landing_page():
     return render_template('landing-page.html', tabs=tabs)
 
 
+@app.route("/new")
+def test_page():
+    return render_template('new.html', tabs=tabs)
+
+
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
     app.run(debug=True)
